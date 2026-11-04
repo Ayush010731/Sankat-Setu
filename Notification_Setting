@@ -1,0 +1,720 @@
+import '/flutter_flow/ff_builtin_enums.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'notifications_setting_page_model.dart';
+export 'notifications_setting_page_model.dart';
+
+class NotificationsSettingPageWidget extends StatefulWidget {
+  const NotificationsSettingPageWidget({super.key});
+
+  static String routeName = 'notifications_setting_page';
+  static String routePath = '/notificationsSettingPage';
+
+  @override
+  State<NotificationsSettingPageWidget> createState() =>
+      _NotificationsSettingPageWidgetState();
+}
+
+class _NotificationsSettingPageWidgetState
+    extends State<NotificationsSettingPageWidget> {
+  late NotificationsSettingPageModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => NotificationsSettingPageModel());
+
+    _model.switchValue1 = true;
+    _model.switchValue2 = true;
+    _model.switchValue3 = true;
+    _model.switchValue4 = true;
+    _model.switchValue5 = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFFF1F4F8),
+        body: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(20, 35, 20, 0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: (FFMainAxisAlignment.start).flutterValue,
+                  crossAxisAlignment:
+                      (FFCrossAxisAlignment.center).flutterValue,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    FlutterFlowIconButton(
+                      borderRadius: 8,
+                      buttonSize: 40,
+                      icon: Icon(
+                        Icons.chevron_left,
+                        color: Color(0xFF101828),
+                        size: 35,
+                      ),
+                      onPressed: () async {
+                        context.safePop();
+                      },
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 15, 15, 0),
+                      child: Text(
+                        FFLocalizations.of(context).getText(
+                          '94witldm' /* Notifications Setting */,
+                        ),
+                        textAlign: TextAlign.end,
+                        maxLines: 1,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              font: GoogleFonts.interTight(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                              ),
+                              color: Color(0xFF101828),
+                              fontSize: 24,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
+                        overflow: TextOverflow.clip,
+                      ),
+                    ),
+                  ].divide(SizedBox(width: 40)),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 10),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    borderRadius: BorderRadius.circular(26),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 12, 0, 12),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment:
+                                (FFMainAxisAlignment.spaceAround).flutterValue,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFFE8E8),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: Icon(
+                                    Icons.warning_rounded,
+                                    color: Color(0xFFFF3B30),
+                                    size: 32,
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    (FFMainAxisAlignment.center).flutterValue,
+                                crossAxisAlignment:
+                                    (FFCrossAxisAlignment.start).flutterValue,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'tbcki355' /* Landslide Alerts */,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF101B46),
+                                          fontSize: 18,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '8f6cn09k' /* Get notified about landslide
+r... */
+                                      ,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF66718C),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(height: 2)),
+                              ),
+                              Switch.adaptive(
+                                value: _model.switchValue1!,
+                                onChanged: _model.switchValue1!
+                                    ? null
+                                    : (newValue) async {
+                                        safeSetState(() =>
+                                            _model.switchValue1 = newValue!);
+                                        if (newValue!) {
+                                          safeSetState(() {
+                                            _model.switchValue1 = true;
+                                          });
+                                        }
+                                      },
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                activeTrackColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                inactiveTrackColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                inactiveThumbColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Opacity(
+                          opacity: 0.7,
+                          child: Divider(
+                            thickness: 1,
+                            indent: 15,
+                            color: FlutterFlowTheme.of(context).alternate,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment:
+                                (FFMainAxisAlignment.spaceAround).flutterValue,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFE8F4FF),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Align(
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: FaIcon(
+                                    FaIconData(const IconData(
+                                        /* cloudRain */ 0xf73d,
+                                        fontFamily: 'FontAwesomeSolid',
+                                        fontPackage: 'font_awesome_flutter')),
+                                    color: Colors.blue,
+                                    size: 32,
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    (FFMainAxisAlignment.center).flutterValue,
+                                crossAxisAlignment:
+                                    (FFCrossAxisAlignment.start).flutterValue,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'd3lljgbb' /* Weather Updates */,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF101B46),
+                                          fontSize: 18,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'e5uc0szs' /* Receive weather warnings 
+and ... */
+                                      ,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF66718C),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(height: 2)),
+                              ),
+                              Switch.adaptive(
+                                value: _model.switchValue2!,
+                                onChanged: _model.switchValue2!
+                                    ? null
+                                    : (newValue) async {
+                                        safeSetState(() =>
+                                            _model.switchValue2 = newValue!);
+                                        if (newValue!) {
+                                          safeSetState(() {
+                                            _model.switchValue2 = true;
+                                          });
+                                        }
+                                      },
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                activeTrackColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                inactiveTrackColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                inactiveThumbColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Opacity(
+                          opacity: 0.6,
+                          child: Divider(
+                            thickness: 1,
+                            indent: 15,
+                            color: FlutterFlowTheme.of(context).alternate,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment:
+                                (FFMainAxisAlignment.spaceAround).flutterValue,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFFF3D9),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Icon(
+                                  Icons.lightbulb,
+                                  color: Color(0xFFFFB020),
+                                  size: 32,
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    (FFMainAxisAlignment.center).flutterValue,
+                                crossAxisAlignment:
+                                    (FFCrossAxisAlignment.start).flutterValue,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'zefsslto' /* Safety Tips */,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF10183F),
+                                          fontSize: 18,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'gghwl0b3' /* Get helpful safety tips and
+gu... */
+                                      ,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF66718C),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(height: 2)),
+                              ),
+                              Switch.adaptive(
+                                value: _model.switchValue3!,
+                                onChanged: _model.switchValue3!
+                                    ? null
+                                    : (newValue) async {
+                                        safeSetState(() =>
+                                            _model.switchValue3 = newValue!);
+                                        if (newValue!) {
+                                          safeSetState(() {
+                                            _model.switchValue3 = true;
+                                          });
+                                        }
+                                      },
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                activeTrackColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                inactiveTrackColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                inactiveThumbColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Opacity(
+                          opacity: 0.6,
+                          child: Divider(
+                            thickness: 1,
+                            indent: 15,
+                            color: FlutterFlowTheme.of(context).alternate,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment:
+                                (FFMainAxisAlignment.spaceAround).flutterValue,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF0E8FF),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Icon(
+                                  Icons.notifications_active_rounded,
+                                  color: Color(0xFF8057E8),
+                                  size: 32,
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    (FFMainAxisAlignment.center).flutterValue,
+                                crossAxisAlignment:
+                                    (FFCrossAxisAlignment.start).flutterValue,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'exvnpckl' /*    App Updates */,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF101B46),
+                                          fontSize: 18,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '1b0u5ccl' /*     Notifications about new 
+ ... */
+                                      ,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF5D688B),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(height: 2)),
+                              ),
+                              Switch.adaptive(
+                                value: _model.switchValue4!,
+                                onChanged: _model.switchValue4!
+                                    ? null
+                                    : (newValue) async {
+                                        safeSetState(() =>
+                                            _model.switchValue4 = newValue!);
+                                        if (newValue!) {
+                                          safeSetState(() {
+                                            _model.switchValue4 = true;
+                                          });
+                                        }
+                                      },
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                activeTrackColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                inactiveTrackColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                inactiveThumbColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Opacity(
+                          opacity: 0.6,
+                          child: Divider(
+                            thickness: 1,
+                            indent: 15,
+                            color: FlutterFlowTheme.of(context).alternate,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment:
+                                (FFMainAxisAlignment.spaceAround).flutterValue,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFFE8E8),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Icon(
+                                  Icons.campaign_rounded,
+                                  color: Color(0xFFFF3B30),
+                                  size: 32,
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment:
+                                    (FFMainAxisAlignment.center).flutterValue,
+                                crossAxisAlignment:
+                                    (FFCrossAxisAlignment.start).flutterValue,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'flj57g4i' /*     Emergency Alerts */,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF10183F),
+                                          fontSize: 18,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'vuskb4p2' /*      Critical alerts from auth... */,
+                                    ),
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF5D688B),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(height: 2)),
+                              ),
+                              Switch.adaptive(
+                                value: _model.switchValue5!,
+                                onChanged: _model.switchValue5!
+                                    ? null
+                                    : (newValue) async {
+                                        safeSetState(() =>
+                                            _model.switchValue5 = newValue!);
+                                        if (newValue!) {
+                                          safeSetState(() {
+                                            _model.switchValue3 = true;
+                                          });
+                                        }
+                                      },
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                activeTrackColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                inactiveTrackColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                inactiveThumbColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
