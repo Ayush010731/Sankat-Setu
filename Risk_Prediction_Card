@@ -1,0 +1,278 @@
+import '/flutter_flow/ff_builtin_enums.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'riskpredictioncard_model.dart';
+export 'riskpredictioncard_model.dart';
+
+class RiskpredictioncardWidget extends StatefulWidget {
+  const RiskpredictioncardWidget({
+    super.key,
+    String? riskLevel,
+    double? probability,
+    String? updatedTime,
+    String? riskStatus,
+    Color? riskColor,
+    Color? statusBackgroundColor,
+    required this.statusTextColor,
+  })  : this.riskLevel = riskLevel ?? 'LOW',
+        this.probability = probability ?? 18.0,
+        this.updatedTime = updatedTime ?? 'Updated 2 min ago',
+        this.riskStatus = riskStatus ?? 'Stable conditions',
+        this.riskColor = riskColor ?? const Color(0xFF16A765),
+        this.statusBackgroundColor =
+            statusBackgroundColor ?? const Color(0xFFDDF7E6);
+
+  /// Displays the current landslide risk level, such as LOW, MODERATE, HIGH, or
+  /// SEVERE.
+  final String riskLevel;
+
+  /// Represents the predicted probability of a landslide as a percentage.
+  final double probability;
+
+  /// Displays the time when the landslide prediction was last updated.
+  final String updatedTime;
+
+  /// Displays a short description of the current landslide conditions.
+  final String riskStatus;
+
+  /// Sets the text color for the risk level and probability according to the
+  /// current risk category.
+  final Color riskColor;
+
+  /// Sets the background color of the risk status badge according to the
+  /// current conditions.
+  final Color statusBackgroundColor;
+
+  /// Sets the text and icon color of the risk status badge according to the
+  /// current landslide risk category.
+  final Color? statusTextColor;
+
+  @override
+  State<RiskpredictioncardWidget> createState() =>
+      _RiskpredictioncardWidgetState();
+}
+
+class _RiskpredictioncardWidgetState extends State<RiskpredictioncardWidget> {
+  late RiskpredictioncardModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => RiskpredictioncardModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 200,
+      decoration: BoxDecoration(
+        color: Color(0xFFEAF3FF),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: Image.asset(
+            'assets/images/55e8ca3d-bd85-468d-ab71-fad034b10efa.png',
+          ).image,
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: Color(0xFFD9E7FA),
+          width: 1,
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: (FFCrossAxisAlignment.start).flutterValue,
+          textBaseline: TextBaseline.alphabetic,
+          children: [
+            Text(
+              FFLocalizations.of(context).getText(
+                'tb0hokvg' /* CURRENT LANDSLIDE RISK */,
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    font: GoogleFonts.inter(
+                      fontWeight: FontWeight.w600,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
+                    color: Color(0xFF101B46),
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w600,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
+            ),
+            Text(
+              valueOrDefault<String>(
+                widget!.riskLevel,
+                'LOW',
+              ),
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    font: GoogleFonts.inter(
+                      fontWeight: FontWeight.bold,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
+                    color: valueOrDefault<Color>(
+                      widget!.riskColor,
+                      Color(0xFF16A765),
+                    ),
+                    fontSize: 44,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.bold,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: (FFMainAxisAlignment.start).flutterValue,
+              crossAxisAlignment: (FFCrossAxisAlignment.center).flutterValue,
+              textBaseline: TextBaseline.alphabetic,
+              children: [
+                Text(
+                  valueOrDefault<String>(
+                    formatNumber(
+                      widget!.probability,
+                      formatType: FormatType.percent,
+                    ),
+                    '18',
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.bold,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: valueOrDefault<Color>(
+                          widget!.riskColor,
+                          Color(0xFF16A765),
+                        ),
+                        fontSize: 28,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.bold,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
+                ),
+                Text(
+                  FFLocalizations.of(context).getText(
+                    '9cl1sr40' /* probability */,
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w600,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: Color(0xFF101B46),
+                        fontSize: 16,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w600,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
+                ),
+              ].divide(SizedBox(width: 7)),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.schedule_sharp,
+                  color: Color(0xFF66718C),
+                  size: 20,
+                ),
+                Text(
+                  valueOrDefault<String>(
+                    widget!.updatedTime,
+                    'Updated 2 min ago',
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: Color(0xFF66718C),
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
+                ),
+              ].divide(SizedBox(width: 6)),
+            ),
+            Container(
+              width: 155,
+              height: 32,
+              decoration: BoxDecoration(
+                color: valueOrDefault<Color>(
+                  widget!.statusBackgroundColor,
+                  Color(0xFFDDF7E6),
+                ),
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Icon(
+                    Icons.check_circle,
+                    color: valueOrDefault<Color>(
+                      widget!.statusTextColor,
+                      Color(0xFF16834A),
+                    ),
+                    size: 17,
+                  ),
+                  Text(
+                    valueOrDefault<String>(
+                      widget!.riskStatus,
+                      'Stable conditions',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                          color: Color(0xFF16A765),
+                          fontSize: 13,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w600,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                  ),
+                ].divide(SizedBox(width: 6)).addToStart(SizedBox(width: 8)),
+              ),
+            ),
+          ].divide(SizedBox(height: 6)).addToStart(SizedBox(height: 8)),
+        ),
+      ),
+    );
+  }
+}
