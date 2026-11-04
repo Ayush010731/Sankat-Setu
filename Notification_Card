@@ -1,0 +1,214 @@
+import '/flutter_flow/ff_builtin_enums.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'notificationitem_model.dart';
+export 'notificationitem_model.dart';
+
+class NotificationitemWidget extends StatefulWidget {
+  const NotificationitemWidget({
+    super.key,
+    String? title,
+    String? description,
+    String? time,
+    required this.notificationIcon,
+    Color? iconBackgroundColor,
+    Color? iconColor,
+  })  : this.title = title ?? 'Landslide Risk Alert',
+        this.description = description ??
+            'Heavy rainfall has increased landslide risk in your area.',
+        this.time = time ?? '10 min ago',
+        this.iconBackgroundColor =
+            iconBackgroundColor ?? const Color(0xFFFFE8E8),
+        this.iconColor = iconColor ?? const Color(0xFFFF3B30);
+
+  /// Title of the notification
+  final String title;
+
+  /// Message displayed below the notification title
+  final String description;
+
+  /// Time when the notification was received
+  final String time;
+
+  /// Icon displayed for the notification type
+  final Widget? notificationIcon;
+
+  /// Background color behind the notification icon
+  final Color iconBackgroundColor;
+
+  /// Color of the notification icon
+  final Color iconColor;
+
+  @override
+  State<NotificationitemWidget> createState() => _NotificationitemWidgetState();
+}
+
+class _NotificationitemWidgetState extends State<NotificationitemWidget> {
+  late NotificationitemModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => NotificationitemModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+      child: Container(
+        width: double.infinity,
+        height: 100,
+        decoration: BoxDecoration(
+          color: FlutterFlowTheme.of(context).secondaryBackground,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: (FFMainAxisAlignment.spaceBetween).flutterValue,
+          children: [
+            Container(
+              width: 55,
+              height: 55,
+              decoration: BoxDecoration(
+                color: valueOrDefault<Color>(
+                  widget!.iconBackgroundColor,
+                  Color(0xFFFFE8E8),
+                ),
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Align(
+                alignment: AlignmentDirectional(0, 0),
+                child: Icon(
+                  Icons.warning_rounded,
+                  color: valueOrDefault<Color>(
+                    widget!.iconColor,
+                    Color(0xFFFF3B30),
+                  ),
+                  size: 35,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: (FFMainAxisAlignment.center).flutterValue,
+                crossAxisAlignment: (FFCrossAxisAlignment.start).flutterValue,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment:
+                        (FFMainAxisAlignment.spaceBetween).flutterValue,
+                    children: [
+                      Text(
+                        valueOrDefault<String>(
+                          widget!.title,
+                          'Landslide Risk Alert',
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                              ),
+                              color: Color(0xFF101B46),
+                              fontSize: 14,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        valueOrDefault<String>(
+                          widget!.time,
+                          '10 min ago',
+                        ),
+                        maxLines: 1,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                              ),
+                              color: Color(0xFF66718C),
+                              fontSize: 10,
+                              letterSpacing: 0.0,
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
+                      ),
+                    ].divide(SizedBox(width: 10)),
+                  ),
+                  Text(
+                    valueOrDefault<String>(
+                      widget!.description,
+                      'Heavy rainfall has increased landslide risk in your area.',
+                    ),
+                    maxLines: 2,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                          color: Color(0xFF66718C),
+                          fontSize: 12,
+                          letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ].divide(SizedBox(height: 5)).addToEnd(SizedBox(height: 10)),
+              ),
+            ),
+            Icon(
+              Icons.chevron_right,
+              color: Color(0xFF66718C),
+              size: 24,
+            ),
+          ].divide(SizedBox(width: 10)).addToStart(SizedBox(width: 8)),
+        ),
+      ),
+    );
+  }
+}
